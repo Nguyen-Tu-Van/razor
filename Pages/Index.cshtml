@@ -1,0 +1,22 @@
+﻿@page
+@using RazorEntity.Models
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+
+    var articles = ViewData["articles"] as List<Article>;
+}
+
+<h1>Danh mục bài viết</h1>
+
+<ol>
+    @if(articles!=null)
+    {
+        foreach(var article in articles)
+        {
+            <li>
+                @article.Title
+            </li>
+        }
+    }
+</ol>
